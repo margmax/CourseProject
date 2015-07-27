@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQCloud Example</title>
+    <link rel="stylesheet" type="text/css" href="jqcloud/jqcloud.css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+    <script type="text/javascript" src="jqcloud/jqcloud-1.0.4.min.js"></script>
+    <script type="text/javascript">
+        // создание массива тегов
+        var word_list = [];
+
+        var words=['dfg','ertghy','wertghyj','dfdgh','erf'];
+        for(var i=0;i<words.length;i++){
+            var tag={};
+            tag.text=words[i];
+            tag.weight=5+0.5*i;
+            word_list.push(tag);
+        }
+        console.log(word_list);
+
+        $(function () {
+            $("#example").jQCloud(word_list);
+        });
+    </script>
+</head>
+<body>
+<div id="example" style="width: 550px; height: 350px; border: 1px solid #ccc;"></div>
+</body>
+</html>
