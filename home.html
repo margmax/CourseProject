@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Presentation</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css"/>
     <script src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src = "dist/angular-dnd.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#sortable").sortable({
 
+            });
+            });
+    </script>
 </head>
 <body >
    <div class="container" >
@@ -63,8 +73,12 @@
                     <div class="arrow">
                         <span class="glyphicon glyphicon-menu-left fl" aria-hidden="true"></span>
                     </div>
-                    <div class="minislide"></div>
-                    <div class="minislide"></div>
+                    <span id="sortable">
+                        <div  class="ui-widget ui-corner-all ui-state-error minislide"></div>
+                        <div  class="ui-widget ui-corner-all ui-state-error minislide"></div>
+                        <div  class="ui-widget ui-corner-all ui-state-error minislide"></div>
+                        <div  class="ui-widget ui-corner-all ui-state-error minislide"></div>
+                    </span>
                     <div class="arrow">
                         <div class="glyphicon glyphicon-menu-right fl" aria-hidden="true"></div>
                     </div>
@@ -73,8 +87,6 @@
         </div>
     </div >
 
-    <script src="https://code.jquery.com/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="bower_components/angular-dragdrop/src/angular-dragdrop.min.js"></script>
+
 </body>
 </html>

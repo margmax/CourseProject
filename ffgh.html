@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI Draggable - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+        .draggable { width: 150px; height: 150px; padding: 0.5em; }
+    </style>
+    <script type="text/javascript">
+        $(function() {
+            $('.dragElement').draggable({
+                axis: "x"
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div class="container" >
+    <div class="row">
+        <div class="toolsandslide">
+            <div class="row2 col-md-1">
+                <div class="file" data-title="View">
+                    <span class="glyphicon glyphicon-eye-open fl" aria-hidden="true" ></span>
+                </div>
+                <div class="file" data-title="Save">
+                    <span class="glyphicon glyphicon-floppy-save fl" aria-hidden="true" ></span>
+                </div>
+                <div class="file" data-title="Delete">
+                    <span class="glyphicon glyphicon-trash fl" aria-hidden="true" ></span>
+                </div>
+            </div>
+            <div class="row2 col-md-2 tools " >
+                <div class="tool">
+                    <span class="glyphicon glyphicon-picture tl" aria-hidden="true"></span>
+                    Image
+                </div>
+                <div class="tool">
+                    <span class="glyphicon glyphicon-facetime-video tl " aria-hidden="true"></span>
+                    Video
+                </div>
+                <div class="tool">
+                    <span class="glyphicon glyphicon-font tl" aria-hidden="true"></span>
+                    <br>
+                    Text
+                </div>
+                <div class="tool">
+                    <img src="img/rectangle.png">
+                    Rectangle
+                </div>
+                <div class="tool">
+                    <img src="img/ellips.png">
+                    Ellipse
+                </div>
+            </div>
+
+            <div class="row2 col-md-9 " >
+                <div class="slide">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" >
+        <div class="menuslides">
+            <div class="row1 col-md-1"></div>
+            <div class="row1 col-md-2 menu" ></div>
+            <div class="row1 col-md-9 "  >
+                <div class="arrow">
+                    <span class="glyphicon glyphicon-menu-left fl" aria-hidden="true"></span>
+                </div>
+                <div  class="dragElement ui-widget ui-corner-all ui-state-error minislide"></div>
+                <div  class="dragElement ui-widget ui-corner-all ui-state-error minislide"></div>
+                <div class="arrow">
+                    <div class="glyphicon glyphicon-menu-right fl" aria-hidden="true"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
