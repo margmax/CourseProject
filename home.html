@@ -64,10 +64,8 @@
         $('.slide').droppable({
             revert: true,
             drop: function(event, ui) {
-                    if(!ui.item.data('tag') && !ui.item.data('handle')) {
-                        ui.item.data('tag', true);
-                        ui.item.fadeTo(400, 1);
-                    }
+                ui.item.fadeTo(400, 1);
+
             },
             out: function (event, ui) {
                 var self = ui;
@@ -78,17 +76,19 @@
             }
         });
 
-            $('.resizable').resizable({
-                aspectRatio: true,
-                handles: 'ne, se, sw, nw'
+            $(".resize").resizable({handles: 'ne, se, sw, nw'});
+            $(".resize").parent().draggable({
+                stack: "div"
             });
+            $(".resize").rotate({
+                bind: {
+                    dblclick: function() {
+                        $(this).data('angle', $(this).data('angle')+90);
+                        var w = $(this).css('width');
+                        $(this).parent().rotate({ animateTo: $(this).data('angle')}).css({width: $(this).css('height'), height: w});
 
-            $(document).on('mouseover', '.rot', function(){
-                var tc = $(this);
-                tc.rotatable({
-                    handle:tc.children('.rotate.left, .rotate.right')
-                });
-                return true;
+                    }
+                }
             });
         });
     </script>
@@ -109,8 +109,8 @@
                     <span class="glyphicon glyphicon-trash fl" aria-hidden="true" ></span>
                 </div>
             </div>
-            <div class="row2 col-md-2 tool" >
-                <div class="tool draggable resizable" style="background: red">
+            <div class="row2 col-md-2 tools " >
+                <div class="tool draggable resize" style="background: red">
                     <span class="glyphicon glyphicon-picture tl" aria-hidden="true"></span>
                     Image
                 </div>
