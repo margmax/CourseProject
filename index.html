@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app" style = "height: 100%">
+<html lang="en" ng-app="app" style = "height: 100%; ">
 <head>
     <title></title>
 
-<link rel="stylesheet" href="demo.css" />
+<link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="css/stylesheet.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="bower_components/angular/angular.js"></script>
 <script type="text/javascript" src = "dist/angular-dnd.js"></script>
 
@@ -56,16 +57,13 @@
         };
 
         this.reset = function(){
-            this.rect = {top:'0', left:'240px', width: '100px', height: '100px'};
-            this.rect2 = {top:'200px', left:'440px', width: '100px', height: '100px'};
-            this.rect3 = {top:'0', left:'440px', width: '100px', height: '100px'};
-            this.rect4 = {top:'200px', left:'240px', width: '100px', height: '100px'};
+
         }
 
         this.reset();
 
-        this.dragmodel = 'dragmodel';
-        this.dropmodels = [ 'dropmodel'];
+        this.dragmodel = ['dragmodel'];
+        this.dropmodels = ['dropmodel'];
 
     });
 
@@ -79,52 +77,202 @@
                 {{main.dragmodel}}
             </div>
         </script>
-<div class = "dnd-container">
-            <div class = "draggable handle" style = "position: absolute; "
-                 ng-style = "{'line-height': main.rect.height}"
-                 ng-click = "click(!$dragged && !$resized && !$rotated, $dropmodel)"
 
-                 dnd-draggable = "true"
-                 dnd-draggable-opts = "{layer: 'layer1' }"
-                 dnd-on-dragstart = "main.dragstart($dropmodel, $dragmodel)"
-                 dnd-on-drag = "main.drag($dropmodel, $dragmodel)"
-                 dnd-on-dragend = "main.dragend($dropmodel, $dragmodel)"
-
-                 dnd-rotatable = "true"
-                 dnd-on-rotatestart = "main.dragstart()"
-                 dnd-on-rotate = "main.drag()"
-                 dnd-on-rotateend = "main.dragend()"
-
-                 dnd-resizable = "true"
-                 dnd-on-resizestart = "main.dragstart()"
-                 dnd-on-resize = "main.drag()"
-                 dnd-on-resizeend = "main.dragend()"
-                 dnd-containment = "'.dnd-container'"
-
-                 dnd-rect = "main.rect"
-                 dnd-fittext = "{width:main.rect.width, height:main.rect.height}"
-                 dnd-model = "main.dragmodel">
-
-                Drag me
-
+<div class="container" >
+    <div class="row">
+        <div class="toolsandslide">
+            <div class="row2 col-md-1">
+                <div class="file" data-title="View">
+                    <span class="glyphicon glyphicon-eye-open fl" aria-hidden="true" ></span>
+                </div>
+                <div class="file" data-title="Save">
+                    <span class="glyphicon glyphicon-floppy-save fl" aria-hidden="true" ></span>
+                </div>
+                <div class="file" data-title="Delete">
+                    <span class="glyphicon glyphicon-trash fl" aria-hidden="true" ></span>
+                </div>
             </div>
+
+    <div class = "dnd-container row2 col-md-2 tools slide" style="background: blue; width: 500px; height: 500px;">
+
+                <div class = "tool draggable handle"
+                            ng-style = "{'line-height': main.rect.height}"
+                            ng-click = "click(!$dragged && !$resized && !$rotated, $dropmodel)"
+
+                            dnd-draggable = "true"
+                            dnd-draggable-opts = "{layer: 'layer1' }"
+                            dnd-on-dragstart = "main.dragstart($dropmodel, $dragmodel)"
+                            dnd-on-drag = "main.drag($dropmodel, $dragmodel)"
+                            dnd-on-dragend = "main.dragend($dropmodel, $dragmodel)"
+
+                            dnd-rotatable = "true"
+                            dnd-on-rotatestart = "main.dragstart()"
+                            dnd-on-rotate = "main.drag()"
+                            dnd-on-rotateend = "main.dragend()"
+
+                            dnd-resizable = "true"
+                            dnd-on-resizestart = "main.dragstart()"
+                            dnd-on-resize = "main.drag()"
+                            dnd-on-resizeend = "main.dragend()"
+                            dnd-containment = "'.dnd-container'"
+
+                            dnd-rect = "main.rect"
+                            dnd-fittext = "{width:main.rect.width, height:main.rect.height}"
+                            dnd-model = "main.dragmodel">
+
+                                 <span class="glyphicon glyphicon-picture tl" aria-hidden="true"></span>
+                                <span>Image</span>
+                </div>
+
+                <div class = " tool draggable handle"
+                     ng-style = "{'line-height': main.rect2.height}"
+                     ng-click = "click(!$dragged && !$resized && !$rotated, $dropmodel)"
+
+                     dnd-draggable = "true"
+                     dnd-draggable-opts = "{layer: 'layer1' }"
+                     dnd-on-dragstart = "main.dragstart($dropmodel, $dragmodel)"
+                     dnd-on-drag = "main.drag($dropmodel, $dragmodel)"
+                     dnd-on-dragend = "main.dragend($dropmodel, $dragmodel)"
+
+                     dnd-rotatable = "true"
+                     dnd-on-rotatestart = "main.dragstart()"
+                     dnd-on-rotate = "main.drag()"
+                     dnd-on-rotateend = "main.dragend()"
+
+                     dnd-resizable = "true"
+                     dnd-on-resizestart = "main.dragstart()"
+                     dnd-on-resize = "main.drag()"
+                     dnd-on-resizeend = "main.dragend()"
+                     dnd-containment = "'.dnd-container'"
+
+                     dnd-rect = "main.rect2"
+                     dnd-fittext = "{width:main.rect2.width, height:main.rect2.height}"
+                     dnd-model = "main.dragmodel">
+
+                        <span class="glyphicon glyphicon-facetime-video tl " aria-hidden="true"></span>
+                        <span>Video</span>
+                </div>
+                <div class = " tool draggable handle"
+                     ng-style = "{'line-height': main.rect3.height}"
+                     ng-click = "click(!$dragged && !$resized && !$rotated, $dropmodel)"
+
+                     dnd-draggable = "true"
+                     dnd-draggable-opts = "{layer: 'layer1' }"
+                     dnd-on-dragstart = "main.dragstart($dropmodel, $dragmodel)"
+                     dnd-on-drag = "main.drag($dropmodel, $dragmodel)"
+                     dnd-on-dragend = "main.dragend($dropmodel, $dragmodel)"
+
+                     dnd-rotatable = "true"
+                     dnd-on-rotatestart = "main.dragstart()"
+                     dnd-on-rotate = "main.drag()"
+                     dnd-on-rotateend = "main.dragend()"
+
+                     dnd-resizable = "true"
+                     dnd-on-resizestart = "main.dragstart()"
+                     dnd-on-resize = "main.drag()"
+                     dnd-on-resizeend = "main.dragend()"
+                     dnd-containment = "'.dnd-container'"
+
+                     dnd-rect = "main.rect3"
+                     dnd-fittext = "{width:main.rect3.width, height:main.rect3.height}"
+                     dnd-model = "main.dragmodel">
+
+                    <span class="glyphicon glyphicon-font tl" aria-hidden="true"></span>
+                    <span>Text</span>
+                </div>
+
+                <div class = " tool draggable handle"
+                     ng-style = "{'line-height': main.rect4.height}"
+                     ng-click = "click(!$dragged && !$resized && !$rotated, $dropmodel)"
+
+                     dnd-draggable = "true"
+                     dnd-draggable-opts = "{layer: 'layer1' }"
+                     dnd-on-dragstart = "main.dragstart($dropmodel, $dragmodel)"
+                     dnd-on-drag = "main.drag($dropmodel, $dragmodel)"
+                     dnd-on-dragend = "main.dragend($dropmodel, $dragmodel)"
+
+                     dnd-rotatable = "true"
+                     dnd-on-rotatestart = "main.dragstart()"
+                     dnd-on-rotate = "main.drag()"
+                     dnd-on-rotateend = "main.dragend()"
+
+                     dnd-resizable = "true"
+                     dnd-on-resizestart = "main.dragstart()"
+                     dnd-on-resize = "main.drag()"
+                     dnd-on-resizeend = "main.dragend()"
+                     dnd-containment = "'.dnd-container'"
+
+                     dnd-rect = "main.rect4"
+                     dnd-fittext = "{width:main.rect4.width, height:main.rect4.height}"
+                     dnd-model = "main.dragmodel">
+
+                    <img src="img/rectangle.png">
+                    <span>Rectangle</span>
+                </div>
+
+                <div class = " tool draggable handle"
+                     ng-style = "{'line-height': main.rect5.height}"
+                     ng-click = "click(!$dragged && !$resized && !$rotated, $dropmodel)"
+
+                     dnd-draggable = "true"
+                     dnd-draggable-opts = "{layer: 'layer1' }"
+                     dnd-on-dragstart = "main.dragstart($dropmodel, $dragmodel)"
+                     dnd-on-drag = "main.drag($dropmodel, $dragmodel)"
+                     dnd-on-dragend = "main.dragend($dropmodel, $dragmodel)"
+
+                     dnd-rotatable = "true"
+                     dnd-on-rotatestart = "main.dragstart()"
+                     dnd-on-rotate = "main.drag()"
+                     dnd-on-rotateend = "main.dragend()"
+
+                     dnd-resizable = "true"
+                     dnd-on-resizestart = "main.dragstart()"
+                     dnd-on-resize = "main.drag()"
+                     dnd-on-resizeend = "main.dragend()"
+                     dnd-containment = "'.dnd-container'"
+
+                     dnd-rect = "main.rect5"
+                     dnd-fittext = "{width:main.rect5.width, height:main.rect5.height}"
+                     dnd-model = "main.dragmodel">
+
+                        <img src="img/ellips.png">
+                        <span>Ellipse</span>
+                </div>
+
+
+        <div class="slide"></div>
 
             <div
                 ng-repeat = "dropmodel in main.dropmodels"
-                class = "dropzone"
+                class = "dropzone row2 col-md-9 "
                 ng-class = "{dropped: main.isDropped(dropmodel), active: main.isActive(dropmodel)}"
-
                 dnd-droppable = "true"
                 dnd-droppable-opts = "{layer: 'layer1'}"
                 dnd-on-drop = "main.drop($dropmodel, $dragmodel)"
                 dnd-on-dragenter = "main.dragenter($dropmodel, $dragmodel)"
                 dnd-on-dragleave = "main.dragleave($dropmodel, $dragmodel)"
                 dnd-on-dragover = "main.dragover($dropmodel, $dragmodel)"
-
                 dnd-model = "dropmodel" >
 
-
             </div>
+        <div class="row" >
+            <div class="menuslides">
+                <div class="row1 col-md-1"></div>
+                <div class="row1 col-md-2 menu" ></div>
+                <div class="row1 col-md-9 "  >
+                    <div class="arrow">
+                        <span class="glyphicon glyphicon-menu-left fl" aria-hidden="true"></span>
+                    </div>
+                    <div class="minislide"></div>
+                    <div class="minislide"></div>
+                    <div class="arrow">
+                        <div class="glyphicon glyphicon-menu-right fl" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div >
+
 </div>
 
 </body>

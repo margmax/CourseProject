@@ -1,3 +1,9 @@
+
+
+.dnd-container {
+    position: relative;
+}
+
 .col-md-1{
     background: #292E29  ;
 }
@@ -35,6 +41,7 @@
     padding: 5px;
     margin: 5px;
     margin-left: 37px;
+    z-index: 3;
 }
 .file{
     text-align: center;
