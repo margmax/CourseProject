@@ -1,7 +1,51 @@
+.resize
+{
+    position:absolute;
+    border-color:black;
+    border-style:solid;
+    border-width:1px;
+}
 
+.ui-resizable-se{
+    width: 7px;
+    height: 7px;
+    background-color: #D0F2F0;
+    border-color:#45C1B1;
+    border-style:solid;
+    border-width:1px;
+    bottom:0px;
+    right:0px;
+}
 
-.dnd-container {
-    position: relative;
+.ui-resizable-sw{
+    width: 7px;
+    height: 7px;
+    background-color: #D0F2F0;
+    border-color:#45C1B1;
+    border-style:solid;
+    border-width:1px;
+    bottom:0px;
+    left:0px;
+}
+.ui-resizable-nw{
+    width: 7px;
+    height: 7px;
+    background-color: #D0F2F0;
+    border-color:#45C1B1;
+    border-style:solid;
+    border-width:1px;
+    top:0px;
+    left:0px;
+}
+.ui-resizable-ne{
+    width: 7px;
+    height: 7px;
+    background-color: #D0F2F0;
+    border-color:#45C1B1;
+    border-style:solid;
+    border-width:1px;
+    top:0px;
+    right:0px;
 }
 
 .col-md-1{
@@ -38,7 +82,7 @@
     padding: 5px;
     margin: 5px;
     margin-left: 37px;
-    z-index: 3;
+    z-index: 5;
 }
 .file{
     text-align: center;
@@ -71,6 +115,7 @@
     height: 95%;
     background: white;
     margin: 10px;
+    z-index: 3;
 }
 .file:hover::after {
     content: attr(data-title);

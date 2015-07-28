@@ -11,13 +11,88 @@
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://code.interactjs.io/interact-1.2.4.min.js"></script>
     <script type="text/javascript">
         $(function() {
             $("#sortable").sortable({
-
+                axis: "x",
+                containment:'parent'
             });
             });
     </script>
+<!--    <script>
+        $(function() {
+            $('.slide').droppable({
+                revert: true,
+                drop: function(event, ui) {
+                    ui.item.fadeTo(400, 1);
+
+            },
+                out: function (event, ui) {
+                    var self = ui;
+                    ui.helper.off('mouseup').on('mouseup', function () {
+                        $(this).remove();
+                        self.draggable.remove();
+                    });
+                }
+            });
+            $('.draggable').draggable({
+                helper : "clone",
+            });
+
+            $('.resizable').resizable({
+                aspectRatio: true,
+                handles: 'ne, se, sw, nw'
+            });
+
+            $(document).on('mouseover', '.rot', function () {
+                var tc = $(this);
+                tc.rotatable({
+                    handle: tc.children('.rotate.left, .rotate.right')
+                });
+                return true;
+            });
+            $("ul, li").disableSelection();
+        });
+    </script>-->
+    <script>
+        $(function(){
+        $('.draggable').draggable({
+            helper : "clone"
+        });
+
+        $('.slide').droppable({
+            revert: true,
+            drop: function(event, ui) {
+                    if(!ui.item.data('tag') && !ui.item.data('handle')) {
+                        ui.item.data('tag', true);
+                        ui.item.fadeTo(400, 1);
+                    }
+            },
+            out: function (event, ui) {
+                var self = ui;
+                ui.helper.off('mouseup').on('mouseup', function () {
+                    $(this).remove();
+                    self.draggable.remove();
+                });
+            }
+        });
+
+            $('.resizable').resizable({
+                aspectRatio: true,
+                handles: 'ne, se, sw, nw'
+            });
+
+            $(document).on('mouseover', '.rot', function(){
+                var tc = $(this);
+                tc.rotatable({
+                    handle:tc.children('.rotate.left, .rotate.right')
+                });
+                return true;
+            });
+        });
+    </script>
+
 </head>
 <body >
    <div class="container" >
@@ -34,8 +109,8 @@
                     <span class="glyphicon glyphicon-trash fl" aria-hidden="true" ></span>
                 </div>
             </div>
-            <div class="row2 col-md-2 tools " >
-                <div class="tool">
+            <div class="row2 col-md-2 tool" >
+                <div class="tool draggable resizable" style="background: red">
                     <span class="glyphicon glyphicon-picture tl" aria-hidden="true"></span>
                     Image
                 </div>
@@ -59,7 +134,7 @@
             </div>
 
                 <div class="row2 col-md-9 " >
-                        <div class="slide">
+                        <div class="slide resize-container dropzone">
                         </div>
                 </div>
             </div>
